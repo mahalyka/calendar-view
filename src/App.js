@@ -1,7 +1,7 @@
 
 // #region START: Library
 // _______________________
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Calendar } from './components'
 import './assets/css/App.css';
 
@@ -14,10 +14,25 @@ function App() {
   // #region START: Handler
   // _______________________
   const [showCalendar, setShowCalendar] = useState(false);
+  const initTodo = JSON.parse(localStorage.getItem('todos')) ?? {};
+  const [todoList, setTodoList] = useState(initTodo);
 
   const handleClick = () => {
     setShowCalendar(!showCalendar)
   }
+
+  useEffect(() => {
+    // Load todos from local storage when component mounts
+    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+    if (storedTodos) {
+      setTodoList(storedTodos); // Update state with stored todos
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save todos to local storage whenever todos change
+    localStorage.setItem('todos', JSON.stringify(todoList));
+  }, [todoList]);
   // _______________________
   // #endregion END: Handler
 
@@ -28,7 +43,7 @@ function App() {
     <div className={`landing-page ${showCalendar ? '' : "landing-page-landing"}`}>
       {showCalendar
         ? <div>
-          <Calendar />
+          <Calendar todoList={todoList} setTodoList={setTodoList} />
         </div>
         : <>
           <div className='container'>

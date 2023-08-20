@@ -42,6 +42,11 @@
   gap: 30px
 }
 
+.error-container {
+  color: red;
+  margin-bottom: 20px;
+}
+
 .angiosty {
   max-width: 400px;
 }

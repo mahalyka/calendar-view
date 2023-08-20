@@ -48,11 +48,9 @@ body {
 }
 
 .day {
-  display: flex;
-  justify-content: center;
+  position: relative;
   flex-wrap: wrap;
-  align-items: top;
-  height: 100px;
+  min-height: 100px;
   font-size: 20px;
   font-weight: 700;
   border: 1px solid #ccc;
@@ -69,6 +67,7 @@ body {
   width: 100%;
   height: 25px;
   text-align: center;
+  font-size: 12px;
 }
 
 .tooltip {
@@ -109,21 +108,71 @@ body {
 }
 
 .to-do-list {
+  position: relative;
   font-size: 11px;
   font-weight: 300;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  overflow: auto;
+}
+
+.to-do-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.to-do-list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  width: 0;
+  height: 0;
+}
+
+.to-do-list-scrollable {
+  overflow: auto;
+  max-height: 200px;
+  width: 100%;
+}
+
+.to-do-list-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.to-do-list-scrollable::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  width: 0;
+  height: 0;
 }
 
 .container-card {
-  min-width: 100px;
-  max-width: 100%;
-  padding: 2px 10px;
-  margin: 2px 2px;
-  background-color: burlywood;
-  border-radius: 10px;
+  width: 98%;
+  padding: 2px;
+  margin-bottom: 2px;
+  background-color: blue;
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.container-card:hover {
+  background-color: #007bff;
+}
+
+.icon-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.container-card:hover .icon-container {
+  display: block;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
 }
 
 .form-input {
