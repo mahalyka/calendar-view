@@ -232,8 +232,6 @@ const Calendar = ({ todoList, setTodoList }) => {
     setHoveredIndex(null);
   };
 
-  // ...
-
   const handleEditEvent = (day, data) => {
     setTodo(data.desc)
     setDateValue(data.date)
