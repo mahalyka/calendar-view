@@ -18,7 +18,15 @@ const displayDate = (date) => {
   const localizedDateTimeString = longDateTimeFormat.toLocaleString('en-US', options);
 
   return localizedDateTimeString
+}
 
+
+const displayTime = (date) => {
+  const longTimeFormat = new Date(date);
+  const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+  const localizedTimeString = longTimeFormat.toLocaleTimeString('en-US', options);
+
+  return localizedTimeString;
 }
 
 const isValidEmail = (email) => {
@@ -332,7 +340,7 @@ const Calendar = ({ todoList, setTodoList }) => {
                           {_item.desc}
                         </div>
                         <div>
-                          {_item.date}
+                          {displayTime(_item.date)}
                         </div>
                         <div>
                           {_item.email}
