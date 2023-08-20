@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react'
 import { Calendar } from './components'
 import './assets/css/App.css';
+import imageFile from './assets/image/gray_grunge_texture_in_white_background.jpg'
 
 // _______________________
 // #endregion END: Library
@@ -40,7 +41,12 @@ function App() {
   // #region START: COmponent
   // _______________________
   return (
-    <div className={`landing-page ${showCalendar ? '' : "landing-page-landing"}`}>
+    <div className={`landing-page ${showCalendar ? '' : "landing-page-landing"}`} style={{
+      background: `url(${imageFile})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+    }}>
       {showCalendar
         ? <div>
           <Calendar todoList={todoList} setTodoList={setTodoList} />
