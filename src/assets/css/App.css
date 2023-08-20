@@ -1,0 +1,47 @@
+/* Landing Page */
+.landing-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+}
+
+.landing-page-landing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Landing Content */
+.landing-content {
+  text-align: center;
+}
+
+/* Explore Button */
+.explore-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.explore-button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: wrap;
+  gap: 30px
+}
+
+.angiosty {
+  max-width: 400px;
+}
