@@ -55,7 +55,7 @@ const Calendar = ({ todoList, setTodoList }) => {
   const daysInMonth = new Date(currentDate.getFullYear(), currentMonth + 1, 0).getDate();
   const firstDayOfMonth = new Date(currentDate.getFullYear(), currentMonth, 1).getDay();
   const monthName = splitMonthAndYear(currentDate);
-  const [todo, setTodo] = useState({})
+  const [todo, setTodo] = useState()
   const [isChangeDate, setIsChangeDate] = useState(false)
   const [email, setEmail] = useState()
   const [dateValue, setDateValue] = useState()
